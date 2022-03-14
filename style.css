@@ -1,0 +1,119 @@
+body, ul, li, p{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    margin-bottom: 100px;
+}
+a{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+h1{
+    text-align:center;
+    margin-top: 100px;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+.header{
+    background: #1d1e20;
+    display: flex; 
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.menu{
+    display: flex;
+}
+.menu li{
+    margin-left: 20px;
+}
+.menu li a{
+    display: block;
+    padding: 10px;
+}
+
+/*CSS FLEXBOX 1 */
+
+.flex{
+    display: flex; /*Itens lado a lado*/
+    flex-wrap: wrap; /*Habilita a quebra de linha */
+    max-width: 800px; /*Tamanho maximo ate quebrar as imagens */
+    margin: 0 auto; /* alinha toda a classe no centro da tela*/
+}
+.flex > div{
+    flex: 1 1 200px; /*divide em colunas e o tamanho de cada imagem*/
+    margin: 0 10px; /* 0 uo/down e 10 right/left*/
+}
+
+/*CSS GRIDLAYOUT 1*/
+
+.grid1{
+    display:grid; /*divide em colunas*/
+    grid-template-columns: repeat(3, 1fr); /*define as linhas e as colunas*/
+    max-width: 800px; /*tamanho maximo da imagen*/
+    padding: 10px; /*borda geral*/
+    margin: 0 auto; /*centraliza tudo no centro*/
+    grid-gap: 20px; /*margem em todos os lados*/
+}
+.grid1 > div:nth-child(n + 4){
+    display: grid;/**/
+    grid-template-columns: 1fr 1fr; /*configuração das colunas menores*/
+    grid-gap: 10px;/*margem em todos os lados*/
+    align-items: center;/*alinha o que estiver fora do centro*/
+}
+.grid1 > div:nth-child(1,2,3){
+    align-items: center;
+}
+.grid1 > div.anuncio{
+    grid-column: 1; /*posiciona o anuncio na primeira linha da primeira coluna*/
+    grid-row: 2/5; /*coloca a imagem na segunda linha da primeira coluna*/
+    display: block; /*cancela o efeito de grid anterior*/
+}
+@media(max-width: 600px){
+    .grid1{
+        grid-template-columns: 1fr 1fr; /*deixa tudo em 2 colunas*/
+    }
+    .grid1 > div:nth-child(n + 4){
+        display: block; /*cancela o efeito de grid anterior*/
+    }
+    .grid1 > div.anuncio{
+        grid-column: auto; /*posiciona tudo em 2 colunas*/
+        grid-row: auto;
+        order: -1; /*coloca o anuncio na primeira fileira/ primeira coluna*/
+    }
+}
+
+/*CSS GRIDLAYOUT 2*/
+
+.grid2{
+    display:grid;
+    grid-template-columns: 1fr 200px; /*divide em 2 colunas e define o tamanho da imagen principal em 200px*/
+    grid-gap: 20px; /*margen da imagen principal*/
+    max-width: 800px; /*tamanho maximo das imagens*/
+    padding: 10px; /*10px de distancia de todas as imagens*/
+    margin: 0 auto; /*alinha tudo no centro do site*/
+}
+.sidebar > div{
+    margin-bottom: 10px; /*10px de diustancia do top/bottom*/
+}
+@media (max-width:600px) {
+    .grid2{
+        grid-template-columns: 1fr; /*deixa tudo em 1 coluna pixa*/
+    }
+    .sidebar{
+        display: flex; /* deixa os itens posicionados um do lado do outro*/
+        overflow: scroll; /*cria uma barra de rolagem */
+    }
+    .sidebar > div{
+        flex: 1 0 200px; /* aumenta a imagen sem tirarr das proporções*/ 
+        margin: 0 10px; /* 0 pro top/bottom e 10px pro right/left */
+    }
+}
