@@ -42,72 +42,72 @@ img{
 /*CSS FLEXBOX 1 */
 
 .flex{
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 800px;
-    margin: 0 auto;
+    display: flex; /* POSICIONA TUDO EM FILEIRA */
+    flex-wrap: wrap; /* HABILITA A QUEBRA DDE LINHA */
+    max-width: 800px; /*TAMANHO DAS IMGS*/
+    margin: 0 auto; /* ALINHA TUDO NO CENTRO */
 }
 .flex > div{
-    flex: 1 1 200px;
-    margin: 0 10px;
+    flex: 1 1 200px; /* 2 COLUNAS COM O TAMANHO DA IMAGEN */
+    margin: 0 10px; /* 10PX LEFT/RIGHT */
 }
 
 /*CSS GRIDLAYOUT 1*/
 
 .grid1{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 800px;
-    padding: 10px;
-    margin: 0 auto;
-    grid-gap: 20px;
+    display:grid; /*  */
+    grid-template-columns: repeat(3, 1fr); /* CRIA 3 COLUNAS */
+    max-width: 800px; /* TAMANHO MAXIMO DA IMAGEN */
+    padding: 10px; /* 10PX TODOS OS LADOS DA IMG */
+    margin: 0 auto; /* ALINHA TUDO NO CENTRO */
+    grid-gap: 20px; /* MARGEM EM VOLTA DA IMG */
 }
 .grid1 > div:nth-child(n + 4){
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    align-items: center;
+    display: grid; /*  */
+    grid-template-columns: 1fr 1fr; /* CRIA 2 COLUNAS */
+    grid-gap: 10px; /* MARGEM EM VOLTA DA IMG */
+    align-items: center; /* ALINHA TUDO QUE ESTIVER DEESALINHADO */
 }
 .grid1 > div.anuncio{
-    grid-column: 1;
-    grid-row: 2/5;
-    display: block;
+    grid-column: 1; /* POSIÇÃO DA IMG */
+    grid-row: 2/5; /* POSIÇÃO DA IMG */
+    display: block; /* TIRA A CONFIGURAÇÃO PADRÃO DA DIV */
 }
 @media(max-width: 600px){
     .grid1{
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; /* TRANSFORMA TUDO EM 2 COLUNAS */
     }
     .grid1 > div:nth-child(n + 4){
-        display: block;
+        display: block; /* TIRA A CONFIGURAÇÃO PADRÃO DA DIV */
     }
     .grid1 > div.anuncio{
-        grid-column: auto;
-        grid-row: auto;
-        order: -1;
+        grid-column: auto; /* PREENCHE OS ESPAÇOS EM BRANCO AUTO */
+        grid-row: auto; /* PREENCHE OS ESPAÇOS EM BRANCO AUTO */
+        order: -1; /* ALTERA A ORDEM DA IMG */
     }
 }
 /*CSS GRIDLAYOUT 2*/
 .grid2{
-    display:grid;
-    grid-template-columns: 1fr 200px;
-    grid-gap: 20px;
-    max-width: 800px;
-    padding: 10px;
-    margin: 0 auto;
+    display:grid; /*  */
+    grid-template-columns: 1fr 200px; /* 1 COLUNA COM A IMG NO TAMANHO DE 200PX */
+    grid-gap: 20px; /* MARGEM EM VOLTA DA IMG */
+    max-width: 800px; /* TAMANHO MAXIMO DA IMG */
+    padding: 10px; /* 10PX TODOS OS LADOS DA IMG */
+    margin: 0 auto; /* ALINHA TUDO NO CENTRO */
 }
 .sidebar > div{
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* 10PX NO BOTTOM */
 }
 @media (max-width:600px) {
     .grid2{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* TRANSFORMA TUDO EM 1 COLUNA SÓ */
     }
     .sidebar{
-        display: flex;
-        overflow: scroll;
+        display: flex; /* POSICIONA TUDO EM FILEIRA */
+        overflow: scroll; /* CRIA UMA BARRRA DE SCROLL */
     }
     .sidebar > div{
-        flex: 1 0 200px;
-        margin: 0 10px;
+        flex: 1 0 200px; /* TAMANHO DA IMG SEM PERDER A CONFIGURAÇÃO BASE */
+        margin: 0 10px; /* 10PX LEFT/RIGHT */
     }
 }
